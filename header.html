@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Header</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <nav class="header global-margins">
+        <a href="">
+            <img src="Assets/General/Logo.svg" class="logo-desktop" alt="Logo Elsa Freppaz">
+        </a>
+
+        <div class="navigation">
+            <ul class="pages">
+                <li><a href="">Studio</a></li>
+                <li><a href="">Bobine</a></li>
+                <li><a href="">Pellicule</a></li>
+                <li><a href="">Archives</a></li>
+            </ul>
+    
+            <a href="">
+                <button class="button-contact">
+                    <span>Contact</span>
+                </button>
+            </a>
+        </div>
+
+    </nav>
+
+</body>
+
+
+<style>
+    .header{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .logo-desktop{
+        display: block;
+        width: 200px;
+    }
+
+    .navigation{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 40%;
+    }
+
+    .pages{
+        display: flex;
+        flex-direction: row;
+        gap: 32px;
+    }
+
+
+    ul{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+
+        font-family: 'Inter';
+        font-size: 16px;
+        color: var(--noir);
+
+    }
+
+    button {
+    cursor: pointer;
+    font: 16px 'Inter'; 
+    color: var(--noir);
+    background: var(--blanc);  
+    border: 2px solid var(--bleu);  
+    border-radius: 100px;
+    padding: 5px 20px;
+    }
+
+    button:hover{
+        color: var(--blanc);
+        background-color: var(--bleu);
+        transition: all 0.3s ease-in;
+    }
+
+</style>
+</html>

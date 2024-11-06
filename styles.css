@@ -10,6 +10,9 @@
     --blanc : #F1F1F1;
     --noir : #242529;
     --bleu : #6161B3;
+    --orange : #FF8F5B;
+    --rose : #F08CB7;
+    --vert : #BBE189;
 }
 
 body{
@@ -35,6 +38,47 @@ a:visited{
     src: url("Fonts/Inter-VariableFont_opsz\,wght.ttf");
 }
 
+@font-face {
+    font-family: "Bricolage";
+    src: url(Fonts/BricolageGrotesque-VariableFont_opsz\,wdth\,wght.ttf);
+}
+
+
+
+/*TEXTES___________________*/
+
+h1{
+    font-family: "Bricolage";
+    font-weight: 500;
+    color: var(--noir);
+    font-size: 50px;
+}
+
+.span-salut{
+    font-family: "Bricolage";
+    font-weight: 300;
+    color: var(--noir);
+    font-size: 40px;
+
+}
+
+.span-futur{
+    font-family: "Bricolage";
+    font-weight: 300;
+    color: var(--noir);
+    font-size: 50px;
+}   
+
+.span-UX{
+    color: var(--orange);
+    white-space: nowrap;
+}
+
+p{
+    font-family: 'Inter';
+    font-size: 16px;
+    color: var(--noir);
+}
 
 
 /*MARGIN___________________*/
@@ -45,29 +89,35 @@ a:visited{
     margin-right: auto;
 }
 
-
+.spacer-bottom{
+    margin-bottom: 50px;
+}
 
 /*HEADER___________________*/
 
-.header{
+header{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
+
+
 
 .logo-desktop{
     display: block;
-    width: 200px;
+    width: 70%;
 }
 
-.navigation{
+
+nav{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    width: 40%;
+    gap: 64px;
+   
 }
 
 .pages{
@@ -133,3 +183,7 @@ padding: 5px 20px;
     text-decoration-thickness: 1.5px; 
     text-underline-offset: 4px; 
 }
+
+
+
+

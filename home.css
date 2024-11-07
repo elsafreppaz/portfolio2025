@@ -39,7 +39,7 @@ h1 {
     display: inline-block;
     white-space: nowrap;
 
-    animation: scrollText 50s linear infinite;
+    /* animation: scrollText 50s linear infinite; */
 }
 
 .text-defilant {
@@ -62,13 +62,13 @@ h1 {
 /*CARDS___________________*/
 
 .card-section {
-    background-color: hotpink;
-    /* height: 100vh; */
+    /* background-color: hotpink; */
+    /* height: 100vh;  */
 }
 
 
 .cards {
-    background-color: chartreuse;
+    /* background-color: chartreuse; */
     width: 100%;
     height: 80vh;
     position: relative;
@@ -82,7 +82,8 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
-    height: 70vh;
+    /* Ratio -> JS */
+    height: 70vh; 
     background: #1565C0;
 
     color: white;
@@ -96,7 +97,8 @@ h1 {
     font-size: 50px;
     overflow: hidden;
 
-    border-radius: 12px;
+    border-radius: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 
@@ -125,11 +127,11 @@ h1 {
     background-color: violet;
 }
 
-.spacer {
+.temp {
     height: 100vh;
-    background-color: red;
 }
 
 .scroll-title {
+    padding-top: 20px;
     padding-bottom: 20px;
 }

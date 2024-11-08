@@ -7,24 +7,25 @@
 
 :root {
     /* Couleurs principales */
-    --blanc : #F1F1F1;
-    --noir : #242529;
-    --bleu : #6161B3;
-    --orange : #FF8F5B;
-    --rose : #F08CB7;
-    --vert : #BBE189;
+    --blanc: #F1F1F1;
+    --noir: #242529;
+    --bleu: #6161B3;
+    --orange: #FF8F5B;
+    --rose: #F08CB7;
+    --vert: #BBE189;
 }
 
-body{
+body {
     background-color: var(--blanc);
+    overflow-x: hidden;
 }
 
-a{
+a {
     cursor: pointer;
     text-decoration: inherit;
 }
 
-a:visited{
+a:visited {
     text-decoration: none;
     color: inherit;
 }
@@ -47,14 +48,14 @@ a:visited{
 
 /*TEXTES___________________*/
 
-h1{
+h1 {
     font-family: "Bricolage";
     font-weight: 500;
     color: var(--noir);
     font-size: 50px;
 }
 
-.span-salut{
+.span-salut {
     font-family: "Bricolage";
     font-weight: 300;
     color: var(--noir);
@@ -62,19 +63,19 @@ h1{
 
 }
 
-.span-futur{
+.span-futur {
     font-family: "Bricolage";
     font-weight: 300;
     color: var(--noir);
     font-size: 50px;
-}   
+}
 
-.span-UX{
+.span-UX {
     color: var(--orange);
     white-space: nowrap;
 }
 
-h2{
+h2 {
     font-family: "Bricolage";
     font-weight: 400;
     color: var(--noir);
@@ -83,7 +84,14 @@ h2{
 }
 
 
-p{
+h3 {
+    font-family: "Bricolage";
+    font-weight: 400;
+    color: var(--noir);
+    font-size: 30px;
+}
+
+p {
     font-family: 'Inter';
     font-size: 16px;
     color: var(--noir);
@@ -92,19 +100,19 @@ p{
 
 /*MARGIN___________________*/
 
-.global-margins{
+.global-margins {
     width: 80vw;
     margin-left: auto;
     margin-right: auto;
 }
 
-.spacer-bottom{
+.spacer-bottom {
     margin-bottom: 50px;
 }
 
 /*HEADER___________________*/
 
-header{
+header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -115,28 +123,28 @@ header{
 
 
 
-.logo-desktop{
+.logo-desktop {
     display: block;
     width: 70%;
 }
 
 
-nav{
+nav {
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 64px;
-   
+
 }
 
-.pages{
+.pages {
     display: flex;
     flex-direction: row;
     gap: 32px;
 }
 
 
-ul{
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -149,22 +157,22 @@ ul{
 }
 
 .button-contact {
-cursor: pointer;
-font: 16px 'Inter'; 
-color: var(--noir);
-background: var(--blanc);  
-border: 2px solid var(--bleu);  
-border-radius: 100px;
-padding: 5px 20px;
+    cursor: pointer;
+    font: 16px 'Inter';
+    color: var(--noir);
+    background: var(--blanc);
+    border: 2px solid var(--bleu);
+    border-radius: 100px;
+    padding: 5px 20px;
 }
 
-.button-contact:hover{
+.button-contact:hover {
     color: var(--blanc);
     background-color: var(--bleu);
     transition: all 0.2s ease-in;
 }
 
-.pages a{
+.pages a {
     color: var(--noir);
     display: inline-block;
     position: relative;
@@ -176,23 +184,108 @@ padding: 5px 20px;
     left: 0;
     bottom: -2px;
     width: 0;
-    height: 1.5px; 
+    height: 1.5px;
     background-color: var(--noir);
-    transition: width 0.4s ease-out; 
+    transition: width 0.4s ease-out;
 }
 
 .pages a:hover::after {
-    width: 100%; 
-}   
+    width: 100%;
+}
 
-.page-entered{
-    display: inline-block;
-    color: var(--noir);
-    text-decoration: underline; 
-    text-decoration-thickness: 1.5px; 
-    text-underline-offset: 4px; 
+.page-entered {
+    position: relative;
+}
+
+.page-entered::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 0;
+    height: 1.5px;
+    background-color: var(--noir);
+    transition: width 0.4s ease-out;
+}
+
+.page-entered.page-entered::after {
+    width: 100%; 
 }
 
 
 
+/*FOOTER___________________*/
 
+footer {
+    text-align: center;
+    padding: 70px 0;
+    position: relative;
+}
+
+
+.connect {
+    color: var(--orange);
+    font-size: 80px;
+    margin-bottom: 20px;
+}
+
+
+.nav-rs {
+    display: flex;
+    justify-content: center;
+    padding: 16px 0;
+    gap: 16px;
+
+}
+
+.nav-rs a :hover {
+    transform: scale(1.1);
+    /* transform: rotate(360deg); */
+    transition: 1s ease-in-out;
+}
+
+
+.github-link {
+    text-decoration: underline;
+}
+
+
+@keyframes rotating {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotating2 {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+#triangle {
+    position: absolute;
+    left: -2%;
+    bottom: 80px;
+    width: 15%;
+    z-index: -10;
+    overflow: hidden;
+    animation: rotating 10s linear infinite;
+}
+
+#star {
+    position: absolute;
+    right: -2%;
+    bottom: 40px;
+    width: 20%;
+    z-index: -10;
+    overflow: hidden;
+    animation: rotating2 10s linear infinite;
+}

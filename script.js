@@ -1,3 +1,5 @@
+
+
 /* -------------------------------------------------------------------------- */
 /*                                   Banner                                   */
 /* -------------------------------------------------------------------------- */
@@ -53,7 +55,7 @@ const header = document.querySelector('.scroll-title');
 const animation = gsap.timeline();
 let cardHeight;
 
-function initCards() { 
+function initCards() {
   animation.clear();
 
   cardHeight = cards[0].offsetHeight; // prends la hauteur de la carte 1
@@ -70,8 +72,8 @@ function initCards() {
 
 initCards();
 
-window.addEventListener('resize', initCards);  
-window.addEventListener('load', initCards);    
+window.addEventListener('resize', initCards);
+window.addEventListener('load', initCards);
 
 
 ScrollTrigger.create({
@@ -81,9 +83,46 @@ ScrollTrigger.create({
   end: () => `+=${(cards.length * cardHeight) + header.offsetHeight}`,
   scrub: true,
   animation: animation,
-  markers: false, 
+  markers: false,
   invalidateOnRefresh: true
 });
 
 ScrollTrigger.addEventListener("refreshInit", initCards);
 
+
+
+/* -------------------------------------------------------------------------- */
+/*                                   Mantra                                   */
+/* -------------------------------------------------------------------------- */
+
+
+const mantraHeaders = document.querySelectorAll('.mantra-header');
+const textMantras = document.querySelectorAll('.p-mantra');
+const toggleButtons = document.querySelectorAll('.toggle-button');
+
+// Ajouter un écouteur d'événements sur chaque .mantra-header
+mantraHeaders.forEach((header, index) => {
+  header.addEventListener('click', function () {
+
+
+    if (textMantras[index].style.display === 'block') {
+
+      textMantras[index].style.display = 'none';
+      toggleButtons[index].querySelector('img').src = "Assets/Home/icon-plus.svg";
+      toggleButtons[index].classList.remove('opened');
+    }
+
+    else {
+      textMantras.forEach((text, i) => {
+        text.style.display = 'none';
+        toggleButtons[i].querySelector('img').src = "Assets/Home/icon-plus.svg"; // Réinitialiser les icônes à "plus"
+        toggleButtons[i].classList.remove('opened'); // Enlever la classe 'opened' pour tous les autres boutons
+      });
+
+      
+      textMantras[index].style.display = 'block';
+      toggleButtons[index].querySelector('img').src = "Assets/Home/icon-moins.svg";
+      toggleButtons[index].classList.add('opened');
+    }
+  });
+});

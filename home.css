@@ -62,7 +62,7 @@ h1 {
 /*CARDS___________________*/
 
 .cards {
-    
+
     position: relative;
 }
 
@@ -74,7 +74,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
-  
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -108,12 +108,89 @@ h1 {
 
 
 
-.temp {
-    height: 100vh;
-    background-color: red;
-}
 
 .scroll-title {
     padding-top: 50px;
     padding-bottom: 30px;
+}
+
+
+/*CARDS___________________*/
+
+.mantra-section {
+    background-color: var(--bleu);
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.mantra-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+.mantra-card {
+    margin-top: 20px;
+    background-color: #47477C;
+    width: 32%;
+    height: fit-content;
+    /* top/bottom left/right */
+    padding: 24px 16px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.h2-mantra,
+.p-mantra {
+    color: var(--blanc);
+}
+
+.p-mantra {
+    display: none;
+}
+
+.mantra-header {
+    font-weight: 500;
+    color: var(--noir);
+    /* top/bottom left/right */
+    padding: 4px 2%;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-button {
+    background-color: var(--noir);
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.engagement-header {
+    background-color: var(--orange);
+}
+
+.humain-header {
+    background-color: var(--vert);
+}
+
+.apprentissage-header {
+    background-color: var(--rose);
+}
+
+.toggle-button img {
+    transition: transform 0.3s ease;
+}
+
+.toggle-button.opened img {
+    transform: rotate(180deg);
 }

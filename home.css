@@ -61,16 +61,8 @@ h1 {
 
 /*CARDS___________________*/
 
-.card-section {
-    /* background-color: hotpink; */
-    /* height: 100vh;  */
-}
-
-
 .cards {
-    /* background-color: chartreuse; */
-    width: 100%;
-    height: 80vh;
+    
     position: relative;
 }
 
@@ -82,19 +74,12 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70%;
-    /* Ratio -> JS */
-    height: 70vh; 
-    background: #1565C0;
-
-    color: white;
-    text-transform: uppercase;
-    font-size: 10vw;
-
+  
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    font-size: 50px;
+
     overflow: hidden;
 
     border-radius: 20px;
@@ -116,22 +101,19 @@ h1 {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    position: absolute;
+    /* position: absolute;
     top: 0;
-    left: 0;
+    left: 0; */
 }
 
 
-
-.card-2 {
-    background-color: violet;
-}
 
 .temp {
     height: 100vh;
+    background-color: red;
 }
 
 .scroll-title {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 50px;
+    padding-bottom: 30px;
 }

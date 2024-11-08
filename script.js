@@ -5,18 +5,45 @@
 gsap.to(".text-defilant", {
   x: "-50%",
   duration: 20,
-  repeat: -1,   
-  ease: "linear" 
+  repeat: -1,
+  ease: "linear"
 });
 
 
+/* -------------------------------------------------------------------------- */
+/*                                 Card Height                                */
+/* -------------------------------------------------------------------------- */
 
+const cardRatio = 4 / 2.5;
+const allCards = document.querySelectorAll('.card');
+const cardsContainer = document.querySelector('.cards');
+const containerMargin = 0;
+
+
+function adjustCardHeights() {
+  if (allCards.length > 0) {
+    const cardWidth = allCards[0].offsetWidth;
+    const cardHeight = cardWidth / cardRatio;
+
+    allCards.forEach(card => {
+      card.style.height = `${cardHeight}px`;
+    });
+
+
+    cardsContainer.style.height = `${cardHeight + containerMargin}px`;
+  }
+}
+
+// Écouteurs d'événements pour ajuster les hauteurs lors du redimensionnement de la fenêtre et du chargement de la page
+window.addEventListener('resize', adjustCardHeights); // ICI : Ajuste les hauteurs des cartes lors du redimensionnement
+window.addEventListener('load', adjustCardHeights); // ICI : Ajuste les hauteurs des cartes lors du chargement de la page
 
 
 
 /* -------------------------------------------------------------------------- */
 /*                           Stacked cards on scroll                          */
 /* -------------------------------------------------------------------------- */
+
 
 
 gsap.registerPlugin(ScrollTrigger);
@@ -26,18 +53,16 @@ const header = document.querySelector('.scroll-title');
 const animation = gsap.timeline();
 let cardHeight;
 
-function initCards() { //Donne à GSAP l'info de où sont / vont les cartes 
+function initCards() { 
   animation.clear();
 
-  // Définit `cardHeight` en fonction de la hauteur de la première carte. Cette valeur servira pour positionner chaque carte.
   cardHeight = cards[0].offsetHeight; // prends la hauteur de la carte 1
   console.log("initCards()", cardHeight);
 
-  // Boucle sur chaque carte pour ajuster sa position initiale et définir les animations.
   cards.forEach((card, index) => {
-    // Ignore la première carte, car elle reste en position initiale.
-    if (index > 0) {
-      gsap.set(card, { y: index * cardHeight });
+    if (index > 0) { //ignore la première card
+      const startY = index * cardHeight * 1.5;
+      gsap.set(card, { y: startY });
       animation.to(card, { y: 0, duration: index * 2, ease: "in" }, 0);
     }
   });
@@ -45,19 +70,20 @@ function initCards() { //Donne à GSAP l'info de où sont / vont les cartes
 
 initCards();
 
+window.addEventListener('resize', initCards);  
+window.addEventListener('load', initCards);    
+
+
 ScrollTrigger.create({
   trigger: ".wrapper",
   start: "top top",
   pin: true,
   end: () => `+=${(cards.length * cardHeight) + header.offsetHeight}`,
-
-  // Active le "scrubbing", ce qui signifie que l'animation suivra le défilement de manière synchronisée.
   scrub: true,
   animation: animation,
-  markers: false, //Débogage
+  markers: false, 
   invalidateOnRefresh: true
 });
 
 ScrollTrigger.addEventListener("refreshInit", initCards);
-
 

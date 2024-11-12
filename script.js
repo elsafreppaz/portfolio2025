@@ -23,6 +23,8 @@ const containerMargin = 0;
 
 
 function adjustCardHeights() {
+  console.log("adjust Card")
+
   if (allCards.length > 0) {
     const cardWidth = allCards[0].offsetWidth;
     const cardHeight = cardWidth / cardRatio;
@@ -35,10 +37,6 @@ function adjustCardHeights() {
     cardsContainer.style.height = `${cardHeight + containerMargin}px`;
   }
 }
-
-// Écouteurs d'événements pour ajuster les hauteurs lors du redimensionnement de la fenêtre et du chargement de la page
-window.addEventListener('resize', adjustCardHeights); // ICI : Ajuste les hauteurs des cartes lors du redimensionnement
-window.addEventListener('load', adjustCardHeights); // ICI : Ajuste les hauteurs des cartes lors du chargement de la page
 
 
 
@@ -56,10 +54,11 @@ const animation = gsap.timeline();
 let cardHeight;
 
 function initCards() {
+  console.log("init Card")
   animation.clear();
 
   cardHeight = cards[0].offsetHeight; // prends la hauteur de la carte 1
-  console.log("initCards()", cardHeight);
+  console.log(cards[0].offsetHeight, cardHeight/cardRatio);
 
   cards.forEach((card, index) => {
     if (index > 0) { //ignore la première card
@@ -69,11 +68,6 @@ function initCards() {
     }
   });
 }
-
-initCards();
-
-window.addEventListener('resize', initCards);
-window.addEventListener('load', initCards);
 
 
 ScrollTrigger.create({
@@ -87,7 +81,21 @@ ScrollTrigger.create({
   invalidateOnRefresh: true
 });
 
+
+
+window.addEventListener('resize', () => {
+  adjustCardHeights();
+  initCards();
+  ScrollTrigger.refresh();
+});
+
 ScrollTrigger.addEventListener("refreshInit", initCards);
+
+window.addEventListener('load', ()=>{
+  initCards();
+  adjustCardHeights();
+  ScrollTrigger.refresh();
+} ); 
 
 
 
@@ -126,3 +134,6 @@ mantraHeaders.forEach((header, index) => {
     }
   });
 });
+
+
+

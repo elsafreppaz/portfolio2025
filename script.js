@@ -89,7 +89,7 @@ window.addEventListener('resize', () => {
   ScrollTrigger.refresh();
 });
 
-ScrollTrigger.addEventListener("refreshInit", initCards);
+// ScrollTrigger.addEventListener("refreshInit", initCards);
 
 window.addEventListener('load', ()=>{
   initCards();

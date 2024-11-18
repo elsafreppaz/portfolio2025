@@ -72,8 +72,6 @@ function initCards() {
 
 initCards();
 
-window.addEventListener('resize', initCards);
-window.addEventListener('load', initCards);
 
 
 ScrollTrigger.create({
@@ -87,8 +85,17 @@ ScrollTrigger.create({
   invalidateOnRefresh: true
 });
 
+
+
 ScrollTrigger.addEventListener("refreshInit", initCards);
 
+// window.addEventListener('resize', initCards);
+window.addEventListener('load', initCards);
+
+window.addEventListener('resize', () => {
+  initCards();
+  ScrollTrigger.refresh();
+});
 
 
 /* -------------------------------------------------------------------------- */

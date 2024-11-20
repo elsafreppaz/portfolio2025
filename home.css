@@ -115,7 +115,7 @@ h1 {
 }
 
 
-/*CARDS___________________*/
+/*MANTRA___________________*/
 
 .mantra-section {
     background-color: var(--noir);
@@ -193,4 +193,13 @@ h1 {
 
 .toggle-button.opened img {
     transform: rotate(180deg);
+}
+
+
+
+
+@media (max-width: 1090px) {
+    .card{
+        width: 100%;
+    }
 }

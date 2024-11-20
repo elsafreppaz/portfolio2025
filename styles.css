@@ -118,7 +118,7 @@ header {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    flex-wrap: wrap;
+
 }
 
 
@@ -209,7 +209,7 @@ ul {
 }
 
 .page-entered.page-entered::after {
-    width: 100%; 
+    width: 100%;
 }
 
 
@@ -288,4 +288,41 @@ footer {
     z-index: -10;
     overflow: hidden;
     animation: rotating2 10s linear infinite;
+}
+
+
+
+/* HEADER___________________ */
+
+
+@media (max-width: 1090px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+
+    nav {
+        display: flex;
+        flex-direction: row;
+
+        justify-content: space-between;
+        width: 100%;
+    }
+
+
+    .logo-desktop {
+        margin: 10px auto 10px;
+    }
+
+    h1,
+    .span-futur {
+        font-size: 40px;
+    }
+
+    .span-salut {
+        font-size: 30px;
+    }
+
 }

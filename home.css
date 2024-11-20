@@ -118,7 +118,7 @@ h1 {
 /*CARDS___________________*/
 
 .mantra-section {
-    background-color: var(--bleu);
+    background-color: var(--noir);
     padding-top: 70px;
     padding-bottom: 70px;
 }
@@ -132,7 +132,7 @@ h1 {
 
 .mantra-card {
     margin-top: 20px;
-    background-color: #47477C;
+    background-color: #363753;
     width: 32%;
     height: fit-content;
     /* top/bottom left/right */
